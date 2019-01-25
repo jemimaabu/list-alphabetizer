@@ -2,6 +2,38 @@
 	animation: octocat-wave 560ms ease-in-out
 }
 
+main {
+	padding: 1em 5em;
+}
+
+main h1 {
+	margin-top: 0;
+}
+
+#list-controls {
+	border: 1px solid #5a5a5a;
+	background-color: #f7f7f7;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-bottom: 1em;
+}
+
+.radio-selector {
+	padding: 1em;
+}
+
+.radio-selector + .radio-selector {
+	border-left: 1px solid #5a5a5a;
+}
+
+.radio-selector .select-line {
+	margin-top: 0.5em;
+}
+
+.radio-selector input[type="text"] {
+	width: 2em;
+}
+
 @keyframes octocat-wave {
 	0%, 100% {
 		transform:rotate(0)
@@ -13,3 +45,35 @@
 		transform:rotate(10deg)
 	}
 } 
+
+#list-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#list-form button {
+    margin: 1em 1em 1em 0em;
+	padding: 0.5em 1em;
+	background-color: #eee;
+	border: 1px solid #aeaeae;
+	transition: .3s;
+	cursor: pointer;
+}
+
+#list-sort-area #list-input {
+	height: 80%;
+	width: -webkit-fill-available;
+	outline: none;
+	border: 1px solid #555555;
+	padding: 1em;
+	font: inherit;
+	height: 50vh;
+}
+
+#sorted-list-area #sorted-list {
+	border: 1px solid #555555;
+	height: 80%;
+	padding: 1em;
+	overflow: auto;
+	height: 50vh;
+}
