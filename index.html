@@ -16,31 +16,39 @@
                 <div class="radio-selector" id="separate-by">
                     <b>List is separated by:</b>
                     <div class="select-line">
-                        <input type="radio" name="separate-by" id="separate-new-lines">
+                        <input type="radio" name="separate-by" value="separate-new-lines" checked>
                         <label for="new-lines">New lines</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="separate-by" id="separate-commas">
+                        <input type="radio" name="separate-by" value="separate-commas">
                         <label for="commas">Commas (,)</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="separate-by" id="separate-commas">
+                        <input type="radio" name="separate-by" value="separate-custom">
                         <label for="separate-custom">Custom: </label>
                         <input type="text" name="separate-custom-input" id="separate-custom-input">
+                    </div>
+                    <div class="select-line">
+                        <input type="checkbox" id="remove-duplicates">
+                        <label for="remove-duplicates">Remove duplicates</label>
+                    </div>
+                    <div class="select-line">
+                        <input type="checkbox" id="ignore-characters">
+                        <label for="ignore-characters">Remove first  <input type="text" maxlength="1" name="ignore-characters-input" id="ignore-characters-input"> characters</label>
                     </div>
                 </div>
                 <div class="radio-selector" id="display-by">
                     <b>Display sorted list with:</b>
                     <div class="select-line">
-                        <input type="radio" name="display-by" id="display-new-lines">
+                        <input type="radio" name="display-by" value="display-new-lines" checked>
                         <label for="display-new-lines">New lines</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="display-by" id="separate-commas">
+                        <input type="radio" name="display-by" value="display-commas">
                         <label for="commas">Commas (,)</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="display-by" id="display-custom">
+                        <input type="radio" name="display-by" value="display-custom">
                         <label for="custom-input">Custom: </label>
                         <input type="text" name="display-custom-input" id="display-custom-input">
                     </div>
@@ -48,27 +56,27 @@
                 <div class="radio-selector" id ="sort-using">
                     <b>Sort:</b>
                     <div class="select-line">
-                        <input type="radio" name="sort-using" id="alphabetically">
+                        <input type="radio" name="sort-using" value="alphabetically" checked>
                         <label for="alphabetically">Alphabetically</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="sort-using" id="numerically">
+                        <input type="radio" name="sort-using" value="numerically">
                         <label for="numerically">Numerically</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="sort-using" id="word-length">
+                        <input type="radio" name="sort-using" value="word-length">
                         <label for="word-length">Word length</label>
                     </div>
                 </div>
                 <div class="radio-selector" id ="sort-order">
                     <b>Sort list:</b>
                     <div class="select-line">
-                        <input type="radio" name="sort-order" id="increasing-order">
-                        <label for="increasing-order">Increasing order</label>
+                        <input type="radio" name="sort-order" value="increasing-order" checked>
+                        <label for="increasing-order">Increasing order (A - Z, 0 - 9)</label>
                     </div>
                     <div class="select-line">
-                        <input type="radio" name="sort-order" id="decreasing-order">
-                        <label for="decreasing-order">Decreasing order</label>
+                        <input type="radio" name="sort-order" value="decreasing-order">
+                        <label for="decreasing-order">Decreasing order (Z - A, 9 - 0)</label>
                     </div>
                 </div>
             </div>
@@ -79,8 +87,7 @@
                 </div>
                 <div id="sorted-list-area">
                     <div id="sorted-list"></div>
-                    <button id="copy-sorted-button">Copy to clipboard</button>
-                    <button id="remove-duplicates-button">Remove duplicates</button>
+                    <button id="copy-sorted-button" onclick="copySortedList()">Copy to clipboard</button>
                 </div>
             </div>
         </main>
