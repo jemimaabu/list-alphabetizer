@@ -77,3 +77,64 @@ main h1 {
 	overflow: auto;
 	height: 50vh;
 }
+
+@media (max-width: 992px) {
+	main {
+		padding: 1em;
+	}
+
+	#list-controls {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr;
+		width: 25%;
+		float: left;
+	}
+
+	.radio-selector + .radio-selector {
+		border-left: none;
+		border-top: 1px solid #5a5a5a;
+	}
+
+	#list-form {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
+		width: 70%;
+		float: right;
+	}
+}
+
+/* Dang two media queries, aren't we fancy */
+@media (max-width: 650px) {
+	main {
+		padding: 1em;
+	}
+
+	#list-controls {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+	}
+
+	.radio-selector + .radio-selector {
+		border:none
+	}
+
+	.radio-selector:nth-child(2n) {
+		border-left: 1px solid #5a5a5a
+	}
+
+	.radio-selector:nth-last-of-type(-n+2) {
+		border-top: 1px solid #5a5a5a
+	}
+
+	#list-form {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
+		width: 100%;
+		float: right;
+	}
+}
