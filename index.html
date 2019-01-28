@@ -86,11 +86,14 @@
                     <button id="sort-list-button" onclick="listSort()">Sort list</button>
                 </div>
                 <div id="sorted-list-area">
-                    <div id="sorted-list"></div>
+                    <div id="sorted-list">
+                        <textarea id="sorted-list-op" placeholder="Sorted List" readonly></textarea>
+                    </div>
                     <button id="copy-sorted-button" onclick="copySortedList()">Copy to clipboard</button>
                 </div>
             </div>
         </main>
     </body>
     <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>

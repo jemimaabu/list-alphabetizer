@@ -77,7 +77,7 @@ function listSort() {
     sortOrderMethod();
 
     var listInput = document.getElementById("list-input").value;
-    var sortedList = document.getElementById("sorted-list");
+    var sortedList = document.getElementById("sorted-list-op");
 
     var separateArray = listInput.split(separateBy);
 
@@ -87,28 +87,32 @@ function listSort() {
         : separateArray
 
     var sortArray = sortUsing(separateArray.filter(x => x!=""));
-    var orderedArray = sortOrder(sortArray)
+    var orderedArray = sortOrder(sortArray);
     var jointArray = orderedArray.join(displayBy);
 
     sortedList.innerHTML = jointArray;
 }
 
-function copySortedList() {
-    var sortedList = document.getElementById("sorted-list");
 
-    if (document.selection) { 
-        var range = document.body.createTextRange();
-        range.moveToElementText(sortedList);
-        range.select().createTextRange();
-        document.execCommand("copy"); 
+function copySortedList() {
+    var sortedList = document.getElementById("sorted-list-op");
+    sortedList.select(); //selects everything within the div where id = "sorted-list"
+    document.execCommand("copy");
+    alert("copied");
+
+    // if (document.selection) { 
+    //     var range = document.body.createTextRange();
+    //     range.moveToElementText(sortedList);
+    //     range.select().createTextRange();
+    //     document.execCommand("copy"); 
     
-    } else if (window.getSelection) {
-        var range = document.createRange();
-         range.selectNode(sortedList);
-         window.getSelection().addRange(range);
-         document.execCommand("copy");
-         alert("Text copied") 
-    }
+    // } else if (window.getSelection) {
+    //     var range = document.createRange();
+    //      range.selectNode(sortedList);
+    //      window.getSelection().addRange(range);
+    //      document.execCommand("copy");
+    //      alert("Text copied") 
+    // }
 }
 
 function removeDuplicates() {
