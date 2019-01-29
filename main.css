@@ -149,15 +149,10 @@ main h1 {
 	margin: none;
 	outline: none;
 	overflow: hidden;
-	overflow-x: hidden;
 }
 
 #sorted-list-area #sorted-list{
 	overflow: hidden;
 }
-
-/* #sorted-list-area #sorted-list br{
-	display: none;
-} */
 
 

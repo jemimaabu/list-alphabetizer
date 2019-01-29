@@ -89,11 +89,8 @@ function listSort() {
     var sortArray = sortUsing(separateArray.filter(x => x!=""));
     var orderedArray = sortOrder(sortArray);
     var jointArray = orderedArray.join(displayBy);
-    // console.log(jointArray);
     var breaklineList = jointArray.replace(/<br \/\>/g, "\n");
-    sortedList.innerHTML = breaklineList;
-    // console.log(sortedList);
-   
+    sortedList.innerHTML = breaklineList;   
 }
 
 
@@ -101,29 +98,10 @@ function copySortedList() {
     var sortedList = document.getElementById("sorted-list-op");
     var str = document.getElementById('list-input').innerHTML;
     var x = document.getElementById('sorted-list-op').innerHTML;
-    // console.log(x);
-    // var y = "&lt;br /&gt;";
-    // var n = x.replace(y, '\n');
-    // console.log(n);
     sortedList.select(); //selects everything within the textarea where id = "sorted-list-op"
     if(document.execCommand("copy")){
         alert("copied");
     };
-
-
-    // if (document.selection) { 
-    //     var range = document.body.createTextRange();
-    //     range.moveToElementText(sortedList);
-    //     range.select().createTextRange();
-    //     document.execCommand("copy"); 
-    
-    // } else if (window.getSelection) {
-    //     var range = document.createRange();
-    //      range.selectNode(sortedList);
-    //      window.getSelection().addRange(range);
-    //      document.execCommand("copy");
-    //      alert("Text copied") 
-    // }
 }
 
 function removeDuplicates() {
