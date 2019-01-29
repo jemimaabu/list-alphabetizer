@@ -77,7 +77,7 @@ function listSort() {
     sortOrderMethod();
 
     var listInput = document.getElementById("list-input").value;
-    var sortedList = document.getElementById("sorted-list");
+    var sortedList = document.getElementById("sorted-list-op");
 
     var separateArray = listInput.split(separateBy);
 
@@ -87,28 +87,21 @@ function listSort() {
         : separateArray
 
     var sortArray = sortUsing(separateArray.filter(x => x!=""));
-    var orderedArray = sortOrder(sortArray)
+    var orderedArray = sortOrder(sortArray);
     var jointArray = orderedArray.join(displayBy);
-
-    sortedList.innerHTML = jointArray;
+    var breaklineList = jointArray.replace(/<br \/\>/g, "\n");
+    sortedList.innerHTML = breaklineList;   
 }
 
-function copySortedList() {
-    var sortedList = document.getElementById("sorted-list");
 
-    if (document.selection) { 
-        var range = document.body.createTextRange();
-        range.moveToElementText(sortedList);
-        range.select().createTextRange();
-        document.execCommand("copy"); 
-    
-    } else if (window.getSelection) {
-        var range = document.createRange();
-         range.selectNode(sortedList);
-         window.getSelection().addRange(range);
-         document.execCommand("copy");
-         alert("Text copied") 
-    }
+function copySortedList() {
+    var sortedList = document.getElementById("sorted-list-op");
+    var str = document.getElementById('list-input').innerHTML;
+    var x = document.getElementById('sorted-list-op').innerHTML;
+    sortedList.select(); //selects everything within the textarea where id = "sorted-list-op"
+    if(document.execCommand("copy")){
+        alert("copied");
+    };
 }
 
 function removeDuplicates() {
