@@ -93,17 +93,10 @@ function listSort() {
     sortedList.innerHTML = breaklineList;   
 }
 
-
 function copySortedList() {
     var sortedList = document.getElementById("sorted-list-op");
-    var str = document.getElementById('list-input').innerHTML;
-    var x = document.getElementById('sorted-list-op').innerHTML;
     sortedList.select(); //selects everything within the textarea where id = "sorted-list-op"
     if(document.execCommand("copy")){
         alert("copied");
     };
-}
-
-function removeDuplicates() {
-
 }
