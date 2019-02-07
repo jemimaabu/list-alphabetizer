@@ -85,11 +85,12 @@
                     <textarea id="list-input" placeholder="Enter new list"></textarea>
                     <button id="sort-list-button" onclick="listSort()">Sort list</button>
                 </div>
+
                 <div id="sorted-list-area">
                     <div id="sorted-list">
                         <textarea id="sorted-list-op" placeholder="Sorted List" readonly></textarea>
                     </div>
-                    <button id="copy-sorted-button" onclick="copySortedList()">Copy to clipboard</button>
+                    <button disabled id="copy-sorted-button" onclick="copySortedList()" >Copy to clipboard</button>
                 </div>
             </div>
         </main>
