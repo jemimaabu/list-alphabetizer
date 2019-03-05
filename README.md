@@ -1,5 +1,5 @@
 # list-alphabetizer
-A webapp for sorting lists alphabetically
+A webapp for sorting lists alphabetically.
 
 # How To Use
 1. Choose all required options from the ones provided.
