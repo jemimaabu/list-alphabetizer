@@ -40,6 +40,11 @@ function sortUsingMethod() {
    var radioButtons = document.querySelector('input[name="sort-using"]:checked')
       .value;
    switch (radioButtons) {
+      case 'no-sort':
+         sortUsing = function(array) {
+            return array;
+         }
+         break;
       case "alphabetically":
          sortUsing = function(array) {
             return array.sort();
