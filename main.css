@@ -139,19 +139,16 @@ main h1 {
 	}
 }
 
-#sorted-list-op{
+#sorted-list-op {
 	white-space: pre-line;
 	white-space: pre-wrap;
 	border: none;
 	width: 100%;
 	height: 100%;
-	padding: none;
-	margin: none;
 	outline: none;
-	overflow: hidden;
 }
 
-#sorted-list-area #sorted-list{
+#sorted-list-area #sorted-list {
 	overflow: hidden;
 }
 
